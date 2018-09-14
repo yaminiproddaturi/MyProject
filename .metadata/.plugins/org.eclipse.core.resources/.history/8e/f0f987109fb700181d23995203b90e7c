@@ -1,0 +1,88 @@
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class HiltonHomePage {
+
+	public static void main(String[] args) {
+
+		//invoking chromedriver.exe file
+     
+		System.setProperty("webdriver.chrome.driver", "C:\\chromedriver_win32\\chromedriver.exe");	
+      //Creating a driver object for Chrome browser 
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://hiltonhonors3.hilton.com/en/index.html");
+		System.out.println(driver.getTitle());
+		WebElement search=driver.findElement(By.id("hotelSearchOneBox"));
+		search.sendKeys("Tampa,FL");
+		search.sendKeys(Keys.TAB);
+		/*Actions a =new Actions(driver);
+		a.moveToElement(driver.findElement(By.id("location0"))).build().perform();
+		a.click();*/
+		//Arrival Date
+		driver.findElement(By.name("arrivalDate")).click();
+		
+		List<WebElement> dates=driver.findElements(By.className("ui-state-default"));
+		int count=driver.findElements(By.className("ui-state-default")).size();
+		
+		for(int i=0;i<count;i++)
+		{
+			String text=driver.findElements(By.className("ui-state-default")).get(i).getText();
+			if(text.equalsIgnoreCase("17"))
+			{
+				driver.findElements(By.className("ui-state-default")).get(i).click();
+				break;
+				}
+		}	
+		
+		//Departure Date
+		driver.findElement(By.name("departureDate")).click();
+		
+		List<WebElement> Depdate=driver.findElements(By.className("ui-state-default"));
+		int counting=driver.findElements(By.className("ui-state-default")).size();
+		
+		for(int i=0;i<count;i++)
+		{
+			String text=driver.findElements(By.className("ui-state-default")).get(i).getText();
+			if(text.equalsIgnoreCase("22"))
+			{
+				driver.findElements(By.className("ui-state-default")).get(i).click();
+				break;
+				}
+		}
+
+		driver.findElement(By.xpath("//[@id=\"expanded_form_view\"]/div[5]/a")).click();
+		
+		
+	/*WebElement myDynamicElement = (new WebDriverWait(driver, 30))
+		      .until(ExpectedConditions.visibilityOfElementLocated(
+		               By.className("find_button cta_button")));
+
+		    try
+		    {
+		         Actions act = new Actions(driver);
+		         act.moveToElement(myDynamicElement);
+		         act.click();
+		         act.build().perform();
+		    }
+		    catch (Exception e)
+		    {
+		        e.printStackTrace();
+		        throw e;
+		    }*/
+	
+	
+	
+	System.out.println("The list of hotels are displayed");
+		
+}
+}

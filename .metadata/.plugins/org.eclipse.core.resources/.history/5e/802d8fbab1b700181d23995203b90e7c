@@ -1,0 +1,36 @@
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+public class HiltonPoints {
+	
+
+	public static void main(String[] args) {
+
+		//invoking chromedriver.exe file
+		
+		System.setProperty("webdriver.chrome.driver", "C:\\chromedriver_win32\\chromedriver.exe");	
+       //Creating a driver object for Chrome browser 
+		WebDriver driver=new ChromeDriver();
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		driver.get("https://hiltonhonors3.hilton.com/en/index.html");
+		Actions actions = new Actions(driver);
+		actions.moveToElement(driver.findElement(By.id("Points"))).click().perform();
+		jse.executeScript("window.scrollBy(0,1000)", "");
+		driver.findElement(By.linkText("Credit Cards")).click();
+		//scrolling down
+		jse.executeScript("window.scrollBy(0,500)", "");
+		
+		driver.findElement(By.xpath(".//*[@id=\"1527047564317\"]/table[1]/tbody/tr[3]/td[2]/p[1]/a[2]")).click();
+		System.out.println("Rates And Fees For the HILTON HONORS CARD has been opened");
+
+		
+}
+}

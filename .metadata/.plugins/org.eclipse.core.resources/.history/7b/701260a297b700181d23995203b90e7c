@@ -1,0 +1,46 @@
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
+public class HiltonHomePage {
+
+	public static void main(String[] args) {
+
+		//invoking chromedriver.exe file
+     
+		System.setProperty("webdriver.chrome.driver", "C:\\chromedriver_win32\\chromedriver.exe");	
+      //Creating a driver object for Chrome browser 
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://hiltonhonors3.hilton.com/en/index.html");
+		System.out.println(driver.getTitle());
+		WebElement e=driver.findElement(By.id("hotelSearchOneBox"));
+		e.sendKeys("Tampa,FL");
+		e.sendKeys(Keys.TAB);
+		/*Actions a =new Actions(driver);
+		a.moveToElement(driver.findElement(By.id("location0"))).build().perform();
+		a.click();*/
+		driver.findElement(By.name("arrivalDate")).click();
+		List<WebElement> dates= (List<WebElement>) driver.findElement(By.id("ui-datepicker-col0-dRow3-0-21"));
+		
+		int total_nodes=dates.size();
+		for(int i=0;i<total_nodes;i++) {
+			
+			String date=dates.get(i).getText();
+			if(date.equals("25"))
+			{
+				dates.get(i).click();
+				break;
+				
+			}
+		}
+
+}
+}

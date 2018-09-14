@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="HiltonHomePageSuite" duration-ms="123866" started-at="2018-09-14T02:21:09Z" finished-at="2018-09-14T02:23:13Z">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="123866" started-at="2018-09-14T02:21:09Z" finished-at="2018-09-14T02:23:13Z">
+      <class name="myPackage.HiltonHomePage">
+        <test-method status="PASS" signature="getbrowser()[pri:0, instance:myPackage.HiltonHomePage@cc285f4]" name="getbrowser" is-config="true" duration-ms="6066" started-at="2018-09-14T02:21:09Z" finished-at="2018-09-14T02:21:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getbrowser -->
+        <test-method status="PASS" signature="searchbrowser()[pri:0, instance:myPackage.HiltonHomePage@cc285f4]" name="searchbrowser" duration-ms="45466" started-at="2018-09-14T02:21:15Z" finished-at="2018-09-14T02:22:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchbrowser -->
+        <test-method status="PASS" signature="aftermethod()[pri:0, instance:myPackage.HiltonHomePage@cc285f4]" name="aftermethod" is-config="true" duration-ms="951" started-at="2018-09-14T02:22:01Z" finished-at="2018-09-14T02:22:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- aftermethod -->
+      </class> <!-- myPackage.HiltonHomePage -->
+      <class name="myPackage.HiltonPoints">
+        <test-method status="PASS" signature="GetTheBrowser()[pri:0, instance:myPackage.HiltonPoints@55f3ddb1]" name="GetTheBrowser" is-config="true" duration-ms="3262" started-at="2018-09-14T02:22:02Z" finished-at="2018-09-14T02:22:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GetTheBrowser -->
+        <test-method status="PASS" signature="OffersForCreditCard()[pri:0, instance:myPackage.HiltonPoints@55f3ddb1]" name="OffersForCreditCard" duration-ms="67042" started-at="2018-09-14T02:22:05Z" finished-at="2018-09-14T02:23:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- OffersForCreditCard -->
+        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:myPackage.HiltonPoints@55f3ddb1]" name="AfterMethod" is-config="true" duration-ms="1008" started-at="2018-09-14T02:23:12Z" finished-at="2018-09-14T02:23:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterMethod -->
+      </class> <!-- myPackage.HiltonPoints -->
+    </test> <!-- Test -->
+  </suite> <!-- HiltonHomePageSuite -->
+</testng-results>
